@@ -1,0 +1,12 @@
+<h1>Module Initialization Demo</h1>
+
+<div *ngIf="!auth.loggedIn; then logInBlock; else logOutBlock"></div>
+<ng-template #logInBlock>
+  <button (click)="auth.logIn()">Log In</button>
+</ng-template>
+<ng-template #logOutBlock>
+  <button (click)="auth.logOut()">Log Out</button>
+</ng-template>
+
+<lib-widget></lib-widget>
+<router-outlet></router-outlet>
