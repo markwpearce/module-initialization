@@ -94,13 +94,38 @@ export class LibService {
 
 ---
 
+# Demo
+
+App with multiple libraries, but no special interaction
+
+```sh
+git checkout master
+yarn serve
+```
+
+App with circular dependencies - _this won't build!_
+
+```sh
+git checkout circular-dependency
+yarn serve
+```
+
+App with configuration on module important
+
+```sh
+git checkout with-extra-params
+yarn serve
+```
+
+---
+
 # References
 
 - https://angular.io/guide/architecture-modules
 
 ---
 
-# ModuleInitialization
+## ModuleInitialization
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.1.
 
