@@ -5,27 +5,35 @@ import { LoggerService } from "projects/logger/src/public-api";
   providedIn: "root"
 })
 export class AuthService {
-  private loggedInUser: { name: string };
+  private static loggedInUser: { name: string };
 
   constructor(private logger: LoggerService) {}
 
   get username(): string {
-    return this.loggedInUser ? this.loggedInUser.name : "No User";
+    return AuthService.username;
+  }
+
+  static get username(): string {
+    return AuthService.loggedInUser ? AuthService.loggedInUser.name : "No User";
   }
 
   get loggedIn(): boolean {
-    return !!this.loggedInUser;
+    return !!AuthService.loggedInUser;
   }
 
   logIn() {
     // This should actually do something to log in a user, but demo...
-    this.loggedInUser = { name: "John" };
+    AuthService.loggedInUser = { name: "John" };
     this.logger.log("Logging In");
   }
 
   logOut() {
     // This should actually do something to log out a user, but demo...
-    this.loggedInUser = undefined;
+    AuthService.loggedInUser = undefined;
     this.logger.log("Logging Out");
   }
+}
+
+export function authExtraLogging() {
+  return { username: AuthService.username };
 }

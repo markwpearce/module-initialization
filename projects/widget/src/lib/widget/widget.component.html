@@ -1,3 +1,7 @@
-<div class="widget" (click)="onClick()">
+<div
+  class="widget"
+  [ngStyle]="{ 'border-color': borderColor }"
+  (click)="onClick()"
+>
   My Widget Component!
 </div>

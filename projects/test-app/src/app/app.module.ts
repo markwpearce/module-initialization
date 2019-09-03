@@ -14,7 +14,7 @@ import { WidgetModule } from "projects/widget/src/public-api";
     AppRoutingModule,
     AuthModule,
     LoggerModule,
-    WidgetModule
+    WidgetModule.withBorder("red")
   ],
   providers: [],
   bootstrap: [AppComponent]
